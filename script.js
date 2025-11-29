@@ -88,7 +88,7 @@ async function processFile(file) {
         formData.append('file', file);
         
         // Upload to backend
-        const response = await fetch('http://localhost:5000/api/upload', {
+        const response = await fetch('https://quizapp-tn4l.onrender.com/api/upload', {
             method: 'POST',
             body: formData
         });
