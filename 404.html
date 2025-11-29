@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideGenius | PPT to Smart Quiz Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>SlideGenius</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <button class="btn-login">Login</button>
+                <button class="btn-signup">Sign Up Free</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fas fa-rocket"></i>
+                    AI-Powered Quiz Generation
+                </div>
+                <h1 class="hero-title">
+                    Transform Presentations into
+                    <span class="gradient-text">Engaging Quizzes</span>
+                </h1>
+                <p class="hero-description">
+                    Upload your PowerPoint slides and instantly create professional multiple-choice quizzes. 
+                    Perfect for educators, trainers, and content creators.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Quizzes Created</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Time Saved</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-label">User Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-header">
+                    <h3>Create Your Quiz</h3>
+                    <p>Upload PPT/PDF to get started</p>
+                </div>
+                
+                <!-- Upload Zone -->
+                <div class="upload-zone" id="uploadZone">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h4>Drop your presentation here</h4>
+                        <p>Supports .PPT, .PPTX, .PDF files</p>
+                        <button class="btn-browse">Browse Files</button>
+                    </div>
+                    <input type="file" id="fileInput" accept=".ppt,.pptx,.pdf" hidden>
+                </div>
+
+                <!-- Processing State -->
+                <div class="processing-state hidden" id="processingState">
+                    <div class="spinner"></div>
+                    <h4>Analyzing your slides...</h4>
+                    <p>Generating smart questions</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="results-section hidden" id="resultsSection">
+                    <div class="results-header">
+                        <div class="success-badge">
+                            <i class="fas fa-check-circle"></i>
+                            Quiz Generated Successfully!
+                        </div>
+                        <h4>Your MCQ Quiz is Ready</h4>
+                    </div>
+                    
+                    <div class="quiz-preview">
+                        <div class="quiz-stats">
+                            <div class="quiz-stat">
+                                <i class="fas fa-question-circle"></i>
+                                <span id="questionCount">0 Questions</span>
+                            </div>
+                            <div class="quiz-stat">
+                                <i class="fas fa-clock"></i>
+                                <span id="difficultyLevel">Mixed Difficulty</span>
+                            </div>
+                        </div>
+                        
+                        <div class="questions-list" id="questionsList">
+                            <!-- Questions will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn-secondary" id="editQuizBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Questions
+                        </button>
+                        <button class="btn-primary" id="exportQuizBtn">
+                            <i class="fas fa-download"></i>
+                            Export Quiz
+                        </button>
+                        <button class="btn-success" id="shareQuizBtn">
+                            <i class="fas fa-share"></i>
+                            Share Online
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Educators</h2>
+                <p>Everything you need to create engaging assessments</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate quizzes from your slides in under 60 seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Smart Generation</h3>
+                    <p>AI-powered question creation with context awareness</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Full Customization</h3>
+                    <p>Edit questions, difficulty levels, and formatting</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Multiple Formats</h3>
+                    <p>Export to PDF, Word, Google Forms, and LMS platforms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <i class="fas fa-brain"></i>
+                        <span>SlideGenius</span>
+                    </div>
+                    <p>Transforming education through intelligent assessment tools.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Use Cases</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Documentation</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Support</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SlideGenius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Edit Questions Modal -->
+    <div class="modal hidden" id="editModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Quiz Questions</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalQuestions">
+                <!-- Editable questions will go here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="cancelEdit">Cancel</button>
+                <button class="btn-primary" id="saveChanges">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
