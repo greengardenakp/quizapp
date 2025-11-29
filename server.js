@@ -7,10 +7,10 @@ import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 
 // Import routes
-import uploadRoutes from './routes/upload.js';
+import uploadRoutes from 'upload.js';
 
 // Import middleware
-import errorHandler from './middleware/errorHandler.js';
+import errorHandler from 'errorHandler.js';
 
 // Load environment variables
 dotenv.config();
